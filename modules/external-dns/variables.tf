@@ -3,11 +3,11 @@ variable "environment_dir" {
   type = string
 }
 variable "sa_sufix" {
-  type = string
+  type    = string
   default = "external-dns"
 }
 variable "project_id" {
-  type    = string
+  type = string
 }
 variable "helm_config" {
   type = object({

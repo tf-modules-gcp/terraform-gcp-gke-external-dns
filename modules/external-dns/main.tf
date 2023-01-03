@@ -19,6 +19,6 @@ resource "helm_release" "external_dns" {
     value = google_service_account.service_account.email
     type  = "string"
   }
-  
+
   values = [for s in var.helm_config.chart.values_files : file("${local.environment_dir}/${s}")]
 }
