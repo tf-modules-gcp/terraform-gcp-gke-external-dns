@@ -6,8 +6,12 @@ variable "sa_sufix" {
   type    = string
   default = "external-dns"
 }
-variable "project_id" {
+variable "gke_project_id" {
   type = string
+}
+variable "dns_project_id" {
+  type    = string
+  default = null
 }
 variable "helm_config" {
   type = object({
@@ -15,7 +19,7 @@ variable "helm_config" {
     chart : object({
       repository : string,
       version : string
-      values_files : list(string)
+      values_file : string
     })
   })
 }
